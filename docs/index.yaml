@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  nginx-proxy-manager:
+  - apiVersion: 1.0.0
+    created: "2025-03-17T22:42:35.628591486Z"
+    description: simple NPM deployment
+    digest: 82c5f9333a32cdaebc96fbe19a9fc6e9c451294da756d97df075fdbfd2432912
+    name: nginx-proxy-manager
+    type: application
+    urls:
+    - https://github.com/chr0n1x/nginx-proxy-manager-on-kubernetes/releases/download/nginx-proxy-manager-0.0.1/nginx-proxy-manager-0.0.1.tgz
+    version: 0.0.1
+generated: "2025-03-17T22:42:35.628594974Z"
