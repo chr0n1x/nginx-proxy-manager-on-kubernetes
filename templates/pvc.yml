@@ -1,0 +1,44 @@
+{{- with .Values.persistence }}
+
+{{- with .data }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: npm-data
+  namespace: npm
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi
+  {{- if .storageClass }}
+  storageClassName: {{ .storageClass }}
+  {{- end }}
+  {{- if .existingVolumeName }}
+  volumeName: {{ .existingVolumeName }}
+  {{- end }}
+{{- end }}
+
+{{- with .letsEncrypt }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: npm-letsencrypt
+  namespace: npm
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  {{- if .storageClass }}
+  storageClassName: {{ .storageClass }}
+  {{- end }}
+  {{- if .existingVolumeName }}
+  volumeName: {{ .existingVolumeName }}
+  {{- end }}
+{{- end }}
+
+{{- end }}
