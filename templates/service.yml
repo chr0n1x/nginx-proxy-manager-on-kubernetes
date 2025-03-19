@@ -27,8 +27,12 @@ metadata:
   namespace: npm
 spec:
   ports:
-  - name: admin-ui
+  - name: admin-ui-default
     port: 81
+    protocol: TCP
+    targetPort: 81
+  - name: admin-ui-http
+    port: 80
     protocol: TCP
     targetPort: 81
   selector:
